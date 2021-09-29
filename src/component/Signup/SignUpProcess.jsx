@@ -18,7 +18,7 @@ function SignUpProcess() {
   //   },
   // };
 
-  const Signup = (details, errors) => {
+  const Signup = (details) => {
     console.log(details);
     // if (
     //   localStorage.getItem(details.user) ||
