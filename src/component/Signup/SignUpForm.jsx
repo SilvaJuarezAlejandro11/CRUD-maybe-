@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import validateInfo from "../../js/validateInfo";
+import validateUser from "../../js/validateUser";
 
-function SignUp(Signup, error, callback) {
+function SignUpForm({ Signup, error, callback }) {
   const [errors, setErrors] = useState({
     user: "",
     name: "",
@@ -21,7 +21,7 @@ function SignUp(Signup, error, callback) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const submitHandler = (e) => {
     e.preventDefault();
-    setErrors(validateInfo(details));
+    setErrors(validateUser(details));
     setIsSubmitting(true);
     Signup(details);
   };
@@ -34,7 +34,7 @@ function SignUp(Signup, error, callback) {
   return (
     <form onSubmit={submitHandler}>
       <div className="form-inner">
-        <h2>Sign Up</h2>
+        <h2>Registrar.</h2>
         {error !== "" ? <div className="error">{error}</div> : ""}
         <div className="form-group">
           <label htmlFor="user">Usuario:</label>
@@ -98,7 +98,7 @@ function SignUp(Signup, error, callback) {
         <div className="form-group">
           <label htmlFor="password2">Confirmar contraseña:</label>
           <input
-            type="password2"
+            type="password"
             name="password2"
             id="password2"
             onChange={(e) =>
@@ -117,4 +117,4 @@ function SignUp(Signup, error, callback) {
   );
 }
 
-export default SignUp;
+export default SignUpForm;

@@ -32,7 +32,7 @@ function LoginForm({ Login, error, callback }) {
   return (
     <form onSubmit={submitHandler}>
       <div className="form-inner">
-        <h2>Login</h2>
+        <h2>Iniciar sesión.</h2>
         {error !== "" ? <div className="error">{error}</div> : ""}
         <div className="form-group">
           <label htmlFor="user">Usuario:</label>
