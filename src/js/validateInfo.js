@@ -11,10 +11,10 @@ export default function validateInfo(details) {
       localStorage.getItem(details.user) &&
       details.user === JSON.parse(localStorage.getItem(details.user)).user
     ) {
-      errors.user = "¡El usuario existe en la platafora!.";
+      errors.user = "¡El usuario existe en la plataforma!.";
     } else {
       document.getElementById("user").focus();
-      errors.user = "El usuario no existe en la platafora.";
+      errors.user = "El usuario no existe en la plataforma.";
     }
   }
 
